@@ -4,7 +4,15 @@ import stack.Stack;
 public class Main {
 
   public static void main(String[] args) {
+//    stack();
+    
 
+
+
+  }
+
+
+  public static void stack(){
     Stack newStack = new Stack();
     System.out.println(newStack.top());
     newStack.push(8);
@@ -20,6 +28,5 @@ public class Main {
     newStack.pop();
     newStack.pop();
     newStack.pop();
-
   }
 }
