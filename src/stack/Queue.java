@@ -1,5 +1,7 @@
 package stack;
 
+import java.util.Arrays;
+
 public class Queue {
 
   private int[] queue = new int[3];
@@ -15,7 +17,7 @@ public class Queue {
       System.out.println("queue is full");
     } else {
       rear++;
-      queue[rear] = x;
+      queue[(rear + queue.length) % queue.length] = x;
     }
   }
 
@@ -31,7 +33,17 @@ public class Queue {
     }else {
       return queue[front ++];
     }
+  }
 
+  public void printCurrentQueue(){
+    int[] validQueue = new int[queue.length];
+    int startP = front;
+    int endP = rear;
+    while (startP % queue.length != endP % queue.length){
+      validQueue[startP] = queue[startP];
+
+    }
+    System.out.println(Arrays.toString(validQueue));
   }
 
 
@@ -43,11 +55,18 @@ public class Queue {
   }
 
   public boolean isFull() {
-    if ((front + 1) % queue.length == rear) {
+    if ((rear + 1) % queue.length == front) {
       return true;
     }
     return false;
   }
 
-
+  @Override
+  public String toString() {
+    return "Queue{" +
+            "queue=" + Arrays.toString(queue) +
+            ", front=" + front +
+            ", rear=" + rear +
+            '}';
+  }
 }

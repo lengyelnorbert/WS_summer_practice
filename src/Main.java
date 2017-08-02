@@ -1,13 +1,41 @@
 import java.util.Arrays;
+import stack.Queue;
 import stack.Stack;
 
 public class Main {
 
   public static void main(String[] args) {
 //    stack();
-    
+    queue();
 
 
+
+
+  }
+
+  public static void queue(){
+    Queue newQueue = new Queue();
+    System.out.println(newQueue.toString());
+    newQueue.printCurrentQueue();
+    newQueue.enQueue(5);
+    System.out.println(newQueue.toString());
+    newQueue.printCurrentQueue();
+    newQueue.enQueue(8);
+    System.out.println(newQueue.toString());
+    newQueue.printCurrentQueue();
+    newQueue.enQueue(10);
+    System.out.println(newQueue.toString());
+    newQueue.printCurrentQueue();
+    newQueue.enQueue(12);
+    System.out.println(newQueue.toString());
+    newQueue.printCurrentQueue();
+    newQueue.deQueue();
+    System.out.println(newQueue.toString());
+    newQueue.printCurrentQueue();
+    newQueue.enQueue(18);
+    System.out.println(newQueue.toString());
+    newQueue.deQueue();
+    newQueue.printCurrentQueue();
 
   }
 
